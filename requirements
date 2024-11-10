@@ -1,0 +1,13 @@
+selenium
+pandas
+BeautifulSoup
+tabulate
+dotenv
+sqlalchemy
+
+konlpy
+wordcloud
+
+streamlit
+
+## pip install -r requirements.txt
