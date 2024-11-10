@@ -109,7 +109,7 @@ def main():
         ]
 
     ## Extract
-    for store_info in store_info_list[5:]:
+    for store_info in store_info_list[:4]:
         print(f"Start scrap: {store_info['store_name']}")
 
         driver.get(f"https://m.place.naver.com/restaurant/{store_info['place_id']}/review/visitor")

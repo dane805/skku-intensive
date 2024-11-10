@@ -2,7 +2,7 @@ selenium
 pandas
 beautifulsoup4
 tabulate
-sqlalchemy
+openai
 
 wordcloud
 
