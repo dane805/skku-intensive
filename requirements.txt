@@ -1,11 +1,9 @@
 selenium
 pandas
-BeautifulSoup
+beautifulsoup4
 tabulate
-dotenv
 sqlalchemy
 
-konlpy
 wordcloud
 
 streamlit
