@@ -29,3 +29,4 @@ plt.xticks(rotation=20)
 st.pyplot(fig)
 
 # streamlit run app.py --server.port 80
+# nohup sudo /opt/app/gce/env/my-env/bin/streamlit run app2.py --server.port 80 > output.log 2>&1 &
