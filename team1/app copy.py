@@ -14,7 +14,7 @@ store_name = st.selectbox(
     '리뷰 내용이 궁금한 레스토랑을 선택해주세요',
     target_stores)
 
-target_date = pd.Timestamp('2023-09-17')
+target_date = pd.Timestamp('2024-09-17')
 
 fig = plt.figure()
 plt.scatter(data=df[df.store_name == store_name], x='review_month', y='size')
