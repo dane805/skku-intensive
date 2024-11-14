@@ -7,6 +7,7 @@ import streamlit as st
 
 df = pd.read_parquet("monthly_review_count.parquet")
 df_meta = pd.read_parquet("df_meta.parquet")
+df_loc = pd.read_excel("excel2.xlsx")
 
 df.review_month = df.review_month.dt.to_timestamp()
 
@@ -24,8 +25,10 @@ store_location = df_meta.loc[df_meta.store_name == store_name, "store_location"]
 con1, con2 = st.columns([0.5,0.5])
 
 with con1:
+    df_loc_target = df_loc[df_loc.store_name == store_name]
     map_data = pd.DataFrame(
-        [[37.4900861966504, 127.01953478052]],
+        # [[37.4900861966504, 127.01953478052]],
+        df_loc_target[["위도", "경도"]].values,
         columns=['lat', 'lon'])
     st.map(map_data)
 
@@ -35,4 +38,3 @@ with con2:
     st.text(f"식당 위치: {store_location}")
 
 # streamlit run app.py --server.port 80
-# 
