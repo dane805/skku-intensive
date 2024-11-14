@@ -3,7 +3,8 @@ pandas
 beautifulsoup4
 tabulate
 openai
-
+openpyxl
+geopy
 wordcloud
 
 streamlit
