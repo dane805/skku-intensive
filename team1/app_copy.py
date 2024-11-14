@@ -14,10 +14,13 @@ store_name = st.selectbox(
     '리뷰 내용이 궁금한 레스토랑을 선택해주세요',
     target_stores)
 
+# 선택된 가게의 데이터 필터링
+filtered_df = df[df.store_name == store_name]
+
 target_date = pd.Timestamp('2024-09-17')
 
 fig = plt.figure()
-plt.scatter(data=df[df.store_name == store_name], x='review_month', y='size')
+lt.hist(filtered_df['review_month'], bins=12, edgecolor='black')
 plt.xlabel('Month')
 plt.ylabel('Review count')
 plt.axvline(x=target_date, color='r', linestyle='--', label='2024-09-17')
