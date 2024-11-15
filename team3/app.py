@@ -14,13 +14,14 @@ target_stores = df.store_name.unique()
 st.set_page_config(layout="wide")
 
 store_name = st.selectbox(
-    '리뷰 내용이 궁금한 레스토랑을 선택해주세요',
+    '👉 리뷰 내용이 궁금한 레스토랑을 선택해주세요',
     target_stores)
 
 store_cate = df_meta.loc[df_meta.store_name == store_name, "store_cate"].values[0]
 store_location = df_meta.loc[df_meta.store_name == store_name, "store_location"].values[0]
 keyword_data=df_meta.loc[df_meta.store_name == store_name, '평가 요약'].values[0]
 AIcomment=df_meta.loc[df_meta.store_name == store_name, '평가'].values[0]
+chef_name=df_meta.loc[df_meta.store_name == store_name, "chef_name"].values[0]
 
 con1, con2, con3 = st.columns([0.33,0.33,0.33])
 
@@ -32,7 +33,8 @@ with con1:
     st.map(map_data)
 
 with con2:
-    st.subheader(f"{store_name}")
+    st.subheader(f"🍴 {store_name}")
+    st.text(f"🧑‍🍳 {chef_name} 셰프")
     st.text(f"📣 {store_cate}")
     st.text(f"📣 {store_location}")
     if str(keyword_data) not in ("NaN", "nan"):
