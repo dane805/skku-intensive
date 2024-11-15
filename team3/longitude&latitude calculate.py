@@ -25,12 +25,10 @@ longitude=[]
 latitude=[]
 for i in df["store_location"]:
     simple_address=simplify_address(i)
-    print(simple_address)
     address=geocoding(simple_address)
     longitude.append(address[1])
     latitude.append(address[0])
 
 df["경도"]=longitude
 df["위도"]=latitude
-print(df.head())
-df.to_excel("excel2.xlsx",index=False)
+df.to_excel("excel.xlsx",index=False)
