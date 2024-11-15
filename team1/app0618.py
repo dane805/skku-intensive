@@ -16,7 +16,7 @@ store_name = st.selectbox(
     target_stores
 )
 
-# Filter data for the selected store and calculate cumulative sum
+# Filter data for the selected store, calculate cumulative sum, and select 10-day intervals
 store_data = df[df.store_name == store_name].sort_values('review_month')
 store_data['cumulative_reviews'] = store_data['size'].cumsum()
 
@@ -24,6 +24,9 @@ store_data['cumulative_reviews'] = store_data['size'].cumsum()
 start_date = pd.Timestamp('2024-07-01')
 end_date = pd.Timestamp('2024-11-30')
 store_data = store_data[(store_data['review_month'] >= start_date) & (store_data['review_month'] <= end_date)]
+
+# Resample data to show points at 10-day intervals within the date range
+store_data = store_data.set_index('review_month').resample('10D').last().dropna().reset_index()
 
 # Define target date
 target_date = pd.Timestamp('2024-09-17')
