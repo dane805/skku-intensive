@@ -20,7 +20,7 @@ filtered_df = df[df.store_name == store_name]
 target_date = pd.Timestamp('2024-09-17')
 
 fig = plt.figure()
-lt.hist(filtered_df['review_month'], bins=12, edgecolor='black')
+plt.hist(filtered_df['review_month'], bins=12, edgecolor='black')
 plt.xlabel('Month')
 plt.ylabel('Review count')
 plt.axvline(x=target_date, color='r', linestyle='--', label='2024-09-17')
