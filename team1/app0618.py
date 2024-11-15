@@ -47,3 +47,5 @@ plt.axvline(x=target_date, color='r', linestyle='--', label='2024-09-17')
 plt.xticks(pd.date_range(start=start_date, end=end_date, freq='10D'), rotation=20)
 plt.legend()
 st.pyplot(fig)
+
+#djWjrh
