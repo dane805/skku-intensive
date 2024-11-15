@@ -11,21 +11,16 @@ df.review_month = df.review_month.dt.to_timestamp()
 
 target_stores = df.store_name.unique()
 
-
 st.set_page_config(layout="wide")
 
 store_name = st.selectbox(
     '리뷰 내용이 궁금한 레스토랑을 선택해주세요',
     target_stores)
 
-
 store_cate = df_meta.loc[df_meta.store_name == store_name, "store_cate"].values[0]
 store_location = df_meta.loc[df_meta.store_name == store_name, "store_location"].values[0]
 keyword_data=df_meta.loc[df_meta.store_name == store_name, '평가 요약'].values[0]
 AIcomment=df_meta.loc[df_meta.store_name == store_name, '평가'].values[0]
-
-
-
 
 con1, con2, con3 = st.columns([0.33,0.33,0.33])
 
