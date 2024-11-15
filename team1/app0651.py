@@ -5,7 +5,7 @@ import streamlit as st
 
 # Load data
 df = pd.read_parquet("day_review_count.parquet")
-df.review_month = df.review_month.dt.to_timestamp()
+df.review_month_day = df.review_month_day.dt.to_timestamp()
 
 # Extract month-day information
 df['review_month_day'] = df.review_month.dt.strftime('%m-%d')
@@ -50,3 +50,7 @@ plt.axvline(x=target_date, color='r', linestyle='--', label='2024-09-17')
 plt.xticks(rotation=20)
 plt.legend()
 st.pyplot(fig)
+
+# streamlit run app0651.py --server.port 80
+# ctrl+c =닫기
+# Get-Process | Where-Object {$_.ProcessName -like "*streamlit*"}
