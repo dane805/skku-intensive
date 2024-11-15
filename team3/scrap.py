@@ -98,3 +98,6 @@ df['평가 요약']=data[0]
 df["평가"]=data[1]
 df["chef_name"]=chef_name
 df.to_excel("excel.xlsx",index=False)
+
+# ssh -i "C:\Users\yungg\Downloads\dane_private" natasma13@34.84.106.129
+# nohup sudo /opt/app/gce/env/my-env/bin/streamlit run app.py --server.port 80 > output.log 2>&1 &
